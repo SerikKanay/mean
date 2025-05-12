@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-const baseUrl = 'http://localhost:3000/user/';
+const baseUrl = 'https://mean-fgaz.onrender.com';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -15,11 +15,11 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   public register(username: string, email: string, password: string): Observable<any> {
-    return this.http.post(baseUrl + 'register', { username, email, password }, httpOptions);
+    return this.http.post(baseUrl + '/user/register', { username, email, password }, httpOptions);
   }
 
   public login(email: string, password: string): Observable<any> {
-    return this.http.post(baseUrl + 'login', { email, password }, httpOptions);
+    return this.http.post(baseUrl + '/user/login', { email, password }, httpOptions);
   }
 
   public saveToken(token: string): void {
