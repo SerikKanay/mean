@@ -2,14 +2,10 @@
   "name": "frontend",
   "version": "0.0.0",
   "scripts": {
-  "ng": "ng",
-  "build": "npx ng build && npx ng run frontend:server",
-  "start": "node dist/frontend/server/server.mjs",
-  "watch": "npx ng build --watch --configuration development",
-  "test": "ng test",
-  "serve:ssr:frontend": "node dist/frontend/server/server.mjs"
-}
-,
+  "build:ssr": "ng build && ng run frontend:server",
+  "serve:ssr:frontend": "node dist/frontend/server/server.mjs",
+  "start": "npm run serve:ssr:frontend"
+},
   "private": true,
   "dependencies": {
     "@angular/common": "^19.2.0",
